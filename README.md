@@ -17,6 +17,8 @@ Also the following packages should be present:
 
 1. [zinger_description](https://github.com/pvandervelde/zinger_description) - Contains the geometric
   description of the Zinger robot for ROS to work with.
+1. [zinger_swerve_controller](https://github.com/pvandervelde/zinger_swerve_controller) - Contains
+  the controller for the Zinger robot to control the 4 wheel steering.
 
 ## Contents
 
@@ -53,7 +55,20 @@ from the `slam_toolbox` package.
 ## Usage
 
 The `zinger_nav` contains two different launch files that each can be launched either in the Gazebo
-simulator or in the real world on a physical robot.
+simulator or in the real world on a physical robot. In order to launch either the SLAM stack or the
+navigation stack you will need to have both the robot description loaded and the `zinger_swerve_controller`
+package running. When running in a simulation in Gazebo you can start these two by running the following
+commands in two different terminals.
+
+    ros2 launch zinger_ignition ignition_launch rviz:=true world:=empty_world
+
+    ros2 launch zinger_swerve_controller swerve_controller.launch.py use_sim_time:=true
+
+If you are running on a physical robot you will need to launch as follows:
+
+    ros2 launch zinger_description robot_description use_fake_hardware:=false
+
+    ros2 launch zinger_swerve_controller swerve_controller.launch.py use_sim_time:=false
 
 ### Launch the navigation stack
 
