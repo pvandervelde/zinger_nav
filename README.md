@@ -89,3 +89,8 @@ In order to launch the SLAM stack in the Gazebo simulator use
 When launching the SLAM stack on a physical robot use
 
     ros2 launch zinger_nav slam.launch.py
+
+### Notes
+
+When using RViz to visualize the robot and the navigation stack, make sure to set the fixed frame to
+`map`, otherwise there will be no navigation information available.
