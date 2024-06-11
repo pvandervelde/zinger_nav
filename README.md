@@ -60,7 +60,7 @@ navigation stack you will need to have both the robot description loaded and the
 package running. When running in a simulation in Gazebo you can start these two by running the following
 commands in two different terminals.
 
-    ros2 launch zinger_ignition ignition_launch rviz:=true world:=empty_world
+    ros2 launch zinger_ignition ignition.launch.py rviz:=true world:=empty_world
 
     ros2 launch zinger_swerve_controller swerve_controller.launch.py use_sim_time:=true
 
