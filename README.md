@@ -20,6 +20,11 @@ Also the following packages should be present:
 1. [zinger_swerve_controller](https://github.com/pvandervelde/zinger_swerve_controller) - Contains
   the controller for the Zinger robot to control the 4 wheel steering.
 
+If you want to run the navigation stack in a simulation you will also need:
+
+1. [zinger_ignition](https://github.com/pvandervelde/zinger_ignition) - Contains the launch files
+  to start the Gazebo simulation with the Zinger robot.
+
 ## Contents
 
 This repository contains different folders for the different parts of the navigation and SLAM configuration
@@ -94,3 +99,5 @@ When launching the SLAM stack on a physical robot use
 
 When using RViz to visualize the robot and the navigation stack, make sure to set the fixed frame to
 `map`, otherwise there will be no navigation information available.
+
+At the moment the configuration for localization is untested and might not work as expected.
